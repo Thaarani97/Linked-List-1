@@ -20,3 +20,21 @@ class Solution:
         
         p2.next = p2.next.next
         return head
+
+class Solution:
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        dummy = ListNode(-1)
+        dummy.next = head
+        p1 = dummy
+        p2 = dummy
+        while n+1:
+            p1 = p1.next
+            n-=1
+       
+        while p1:
+            p1=p1.next
+            p2=p2.next
+            
+        p2.next = p2.next.next
+        
+        return dummy.next
